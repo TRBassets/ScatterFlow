@@ -1,0 +1,246 @@
+/* =====  css/style.css  ===== */
+
+/* ----------  VARIABLES  ---------- */
+:root{
+  --bg:#0d0d12;
+  --bg-alt:#15161d;
+  --accent:#53ffd6;
+  --accent-soft:rgba(83,255,214,.15);
+  --txt-primary:#e9e9f1;
+  --txt-muted:#9a9ab3;
+  --radius:1.25rem;
+  --shadow:0 8px 24px rgba(0,0,0,.45);
+  --max-w:800px;               /* fixed page width */
+}
+
+/* ----------  GLOBAL RESET  ---------- */
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Montserrat',sans-serif}
+body{
+  background:var(--bg);
+  color:var(--txt-primary);
+  line-height:1.6;
+  width:800px;                 /* fixed page width */
+  margin:0 auto;
+}
+
+/* ----------  HEADER  ---------- */
+header{text-align:center;padding:5rem 1rem 4rem;background:radial-gradient(circle at 50% 20%,#1e1f29 0%,var(--bg) 70%)}
+h1{font-size:clamp(2.4rem,3.5vw,4rem);font-weight:700;letter-spacing:-.5px;margin-bottom:1rem}
+p.lead{max-width:760px;margin-inline:auto;color:var(--txt-muted);font-size:1.05rem}
+
+/* ----------  WATCH TRAILER  ---------- */
+#trailer{
+  padding:4rem 1rem;
+  background:var(--bg-alt);
+  border-top:1px solid #1f2030;
+  text-align:center;
+}
+#trailer h2{
+  font-size:2rem;
+  color:var(--accent);
+  margin-bottom:1.5rem;
+}
+.trailer-video{
+  position:relative;
+  padding-bottom:56.25%;   /* 16:9 */
+  height:0;
+  max-width:100%;
+  margin-inline:auto;
+}
+.trailer-video iframe{
+  position:absolute;
+  top:0;left:0;width:100%;height:100%;
+  border:0;border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+
+/* ----------  CARD  ---------- */
+.card{background:var(--bg-alt);border-radius:var(--radius);box-shadow:var(--shadow);padding:2rem}
+
+/* ----------  FEATURES  ---------- */
+section.feature{
+  display:flex;
+  flex-direction:column;          /* text above images */
+  gap:2rem;
+  padding:4rem 1rem;
+  border-top:1px solid #1f2030
+}
+main>section.feature:nth-of-type(even){background:var(--bg-alt)}
+.feature .text{flex:1 1 auto}
+.feature .video{flex:1 1 auto}
+.feature h2{font-size:clamp(1.5rem,2.2vw,2.4rem);color:var(--accent);margin-bottom:.75rem}
+.feature ul{margin:.75rem 0 1.25rem 1.25rem;color:var(--txt-muted)}
+.feature li{margin:.35rem 0}
+
+video,.feature .video img{
+  width:100%;
+  aspect-ratio:16/9;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  object-fit:cover;
+  background:var(--accent-soft)
+}
+
+/* ----------  GRID SECTIONS  ---------- */
+#usecases,#assets,#tradscatter{
+  padding:5rem 1rem;
+  border-top:1px solid #1f2030;
+  background:var(--bg)
+}
+#usecases h2,#assets h2,#tradscatter h2{
+  text-align:center;
+  font-size:2rem;
+  margin-bottom:2.5rem;
+  color:var(--accent)
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:2rem;
+  max-width:100%;
+  margin-inline:auto
+}
+
+.case-icon{font-size:3rem;color:var(--accent);margin-bottom:.75rem}
+.case-title{font-weight:600;margin-bottom:.25rem}
+.case-desc{color:var(--txt-muted);font-size:.95rem}
+
+/* --------  ASSET & TRAD IMAGES  -------- */
+.trad-img{
+  width:100%;
+  border-radius:var(--radius);
+  aspect-ratio:3/2;
+  object-fit:cover;
+  box-shadow:var(--shadow);
+  margin-bottom:.5rem
+}
+
+.asset-img{
+  width:100%;
+  height:auto;
+  border-radius:var(--radius);
+  object-fit:contain;
+  box-shadow:var(--shadow);
+  margin-bottom:.5rem
+}
+
+.asset-title,.trad-title{font-weight:600;margin-bottom:.25rem}
+.asset-desc,.trad-desc{color:var(--txt-muted);font-size:.95rem}
+
+/* ----------  FOOTER  ---------- */
+footer{
+  text-align:center;
+  padding:3rem 1rem;
+  color:var(--txt-muted);
+  font-size:.9rem
+}
+
+/* ──────────────────  NEW / OVERRIDES  ────────────────── */
+
+/* 1 — Less padding inside Starter‑Asset cards so image fills more */
+#assets .card{padding:1rem}
+
+/* 2 — Wider cards in assets grid for bigger previews */
+#assets .grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+
+/* 3 — Explanation paragraph under Starter Assets heading */
+.assets-lead{
+  max-width:100%;
+  margin:0 auto 1.5rem;
+  color:var(--txt-muted);
+  text-align:center;
+  font-size:1.05rem
+}
+
+/* 4 — Full‑width hero image for Starter Assets */
+.assets-hero{
+  width:100%;
+  max-height:70vh;
+  object-fit:cover;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  margin:2rem 0
+}
+
+/* 5 — Bullet list under each Starter‑Asset card */
+.asset-bullets{
+  margin:.5rem 0 0 1.25rem;
+  color:var(--txt-muted);
+  font-size:.9rem;
+  list-style-type:disc
+}
+.asset-bullets li{margin:.25rem 0}
+
+/* 6 — Reduced rounding for all images globally */
+img{border-radius:.75rem !important}
+
+
+/* ---------- OTHER PRODUCTS / FEATURE CARD (no accent bar) ---------- */
+#other-products{
+  padding:5rem 1rem;
+  border-top:1px solid #1f2030;
+  background:var(--bg);
+}
+#other-products h2{
+  text-align:center;
+  font-size:2rem;
+  margin-bottom:2.5rem;
+  color:var(--accent);
+}
+.feature-card{
+  position:relative;
+  background:var(--bg-alt);
+  border:1px solid #1f2030;
+  padding:2rem;
+  width:100%;
+  max-width:1000px;
+  margin-inline:auto;
+  box-shadow:var(--shadow);
+  animation:fadeInUp .6s both;
+  text-align:center;
+}
+/* remove the thin green bar */
+.feature-card::before{display:none;}
+/* neutralize hover rule */
+.feature-card:hover{
+  transform:none;
+  box-shadow:var(--shadow);
+}
+.feature-card img{
+  display:block;
+  width:100%;
+  max-width:600px;
+  height:auto;
+  object-fit:cover;
+  border-radius:.75rem;
+  margin:1.5rem auto 0;
+}
+
+/* ---------- SALE BANNER ---------- */
+#sale-banner{
+  position:sticky;
+  top:0;
+  left:0;
+  text-align: center;
+  width:100%;
+  padding:1rem;
+  font-size:clamp(1.1rem,2.4vw,1.5rem);
+  font-weight:700;
+  color:var(--bg);
+  background:linear-gradient(90deg,var(--accent) 0%,#15c0ff 50%,var(--accent) 100%);
+  background-size:200% 100%;
+  animation:banner-gradient 1s linear infinite;
+  box-shadow:0 2px 8px rgba(0,0,0,.4);
+  z-index:9999;
+}
+
+@keyframes banner-gradient{
+  0%  {background-position:0% 0;}
+  100%{background-position:200% 0;}
+}
+
+/* fadeInUp keyframes referenced by .feature-card */
+@keyframes fadeInUp{
+  from{opacity:0;transform:translateY(20px);}
+  to{opacity:1;transform:translateY(0);}
+}

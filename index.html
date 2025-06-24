@@ -1,0 +1,348 @@
+<!-- =====  index.html  ===== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ScatterFlow – World‑Building Add‑on for Blender</title>
+
+  <!-- Fonts & CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<!-- ────────────────── SALE BANNER ─────────────────── -->
+<div id="sale-banner">Launch Sale — 25% Off!</div>
+
+<body>
+  <!-- ─────────────────── HERO ─────────────────── -->
+  <header>
+    <h1>ScatterFlow</h1>
+    <p class="lead">
+      The Physics-Based Scattering Tool
+    </p>
+  </header>
+
+  <!-- ─────────────────── WATCH TRAILER ─────────────────── -->
+  <section id="trailer">
+    <h2>Watch Trailer</h2>
+    <div class="trailer-video">
+      <iframe
+        src="https://www.youtube.com/embed/VIDEO_ID?rel=0&amp;modestbranding=1&amp;playsinline=1"
+        title="ScatterFlow Trailer"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </section>
+
+  <!-- ─────────────────── FEATURES ─────────────────── -->
+  <main style="max-width:var(--max-w);margin-inline:auto">
+    <!-- 2 — Single‑Click Physics Activation -->
+    <section class="feature">
+      <div class="text">
+        <h2>Drop objects with a single click</h2>
+        <p>Make selected objects fall with one click. No complicated setups—just press and drop.</p>
+      </div>
+      <div class="video">
+        <img src="img/singleclickclips-ezgif.com-optimize.gif" alt="Single‑click physics activation animation" />
+      </div>
+    </section>
+
+    <!-- 1 — Instant World Population -->
+    <section class="feature">
+      <div class="text">
+        <h2>Quick spawn objects</h2>
+        <p>
+          Quickly add assets from any collection. Great for creating piles, clutter, or filling containers.
+        </p>
+        <ul><li>Build out environments in seconds</li></ul>
+        <ul><li>Includes a continuous spawn mode—great for filling containers</li></ul>
+      </div>
+      <div class="video">
+        <img src="img/QUICKJSPAWNDFEMOv5-ezgif.com-optimize.gif" alt="Instant world population animation" />
+      </div>
+    </section>
+
+    <!-- 5 — Grid Scattering -->
+    <section class="feature">
+      <div class="text">
+        <h2>Grid Scattering</h2>
+        <p>
+          Perfect for stacking boxes, books, or anything that needs to be in a row.
+        </p>
+        <ul><li>Customizable count and spacing options for precision placement</li></ul>
+      </div>
+      <div class="video">
+        <img src="img/ARRAYDEMOV5-ezgif.com-optimize.gif" alt="Grid scattering animation" />
+      </div>
+    </section>
+
+    <!-- 6 — Manipulate Objects -->
+    <section class="feature">
+      <div class="text">
+        <h2>Object Manipulation</h2>
+        <p>
+          Interact with objects in your scene—pick them up, drag them, throw them, or place them exactly where you want.
+        </p>
+        <ul><li>Objects collide realistically with each other and the environment</li></ul>
+        <ul><li>Built-in hotkeys make dropping objects fast and intuitive</li></ul>
+      </div>
+      <div class="video">
+        <img src="img/maniplulkatedemo-ezgif.com-optimize.gif" alt="Manipulate objects animation" />
+      </div>
+    </section>
+
+    <!-- 4 — Surface Scattering (moved here) -->
+    <section class="feature">
+      <div class="text">
+        <h2>Scatter on Surfaces</h2>
+        <p>
+          Spawn objects across surfaces—ideal for large-scale scattering.
+        </p>
+        <ul><li>Fine-tune distribution using vertex groups</li></ul>
+        <ul><li>Physics are automatically applied on placement</li></ul>
+        <ul><li>Easily swap or randomize scattered assets.</li></ul>
+      </div>
+      <div class="video">
+        <img src="img/SCATTERSRUFACEDEMOV3-ezgif.com-optimize.gif" alt="Surface scattering animation" />
+      </div>
+    </section>
+
+    <!-- 3 — Duplicate, Move & Freeze -->
+    <section class="feature">
+      <div class="text">
+        <h2>Duplicate &amp; Move </h2>
+        <p>
+          Duplicate and reposition objects easily—great for quickly adding assets or refining their positions
+        </p>
+        <ul><li>Objects react and collide naturally while being moved</li></ul>
+      </div>
+      <div class="video">
+        <img src="img/DUPLICATEANDMOVEV2-ezgif.com-optimize.gif" alt="Duplicate, move &amp; freeze animation" />
+      </div>
+    </section>
+
+    <!-- 7 — Effortless Cloth Draping -->
+    <section class="feature">
+      <div class="text">
+        <h2>Cloth Draping</h2>
+        <p>Add realistic cloth in seconds—perfect for blankets, tarps, or anything that needs to drape naturally.</p>
+      </div>
+      <div class="video">
+        <img src="img/clothdemo-ezgif.com-optimize.gif" alt="Cloth draping animation" />
+      </div>
+    </section>
+  </main>
+
+  <!-- ────────────────── TRADITIONAL SCATTER ────────────────── -->
+  <section id="tradscatter">
+    <h2>Traditional Scatter <small>(Powered by OpenScatter)</small></h2>
+    <p style="max-width:var(--max-w);margin:0 auto 2.5rem;color:var(--txt-muted);text-align:center">
+      For artists who prefer classic geometry‑node workflows, ScatterFlow partners with
+      <strong><a href="https://superhivemarket.com/products/openscatter?search_id=40961755" target="_blank" rel="noopener noreferrer">Open&nbsp;Scatter</a></strong>
+      to bring a full suite of node‑based scatter tools—right alongside our physics features.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <img src="img/Open scatter combined.gif" alt="Powerful Scatter Options" class="trad-img">
+        <div class="trad-title">Powerful Scatter Options</div>
+        <p class="trad-desc">Scatter options include pattern, height, proximity and more.</p>
+      </div>
+      <div class="card">
+        <img src="img/optimization combines.gif" alt="Slope &amp; altitude" class="trad-img">
+        <div class="trad-title">Optimization Tools</div>
+        <p class="trad-desc">Speed up viewport performance with the following features. camera culling, proxy objects</p>
+      </div>
+      <div class="card">
+        <img src="img/animation.gif" alt="Pattern based scatter" class="trad-img">
+        <div class="trad-title">Animation Support</div>
+        <p class="trad-desc">Wind, object collision</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────── STARTER ASSETS ────────────────── -->
+  <section id="assets">
+    <h2>Starter Asset Pack <small>(optional)</small></h2>
+
+    <p class="assets-lead">
+      over 450+ props and set pieces to help you get started
+    </p>
+
+    <img src="img/collage.png" alt="Starter Asset Pack hero" class="assets-hero">
+
+    <div class="grid">
+      <!-- 1 — Trash Sets -->
+      <div class="card">
+        <img src="img/trash sets.jpg" alt="Trash sets preview" class="asset-img">
+        <div class="asset-title">Trash Sets</div>
+        <p class="asset-desc">Premade sets for quick drag and drop scene building</p>
+        <ul class="asset-bullets">
+          <li>34 premade sets</li>
+        </ul>
+      </div>
+
+      <!-- 2 — Rubble Sets -->
+      <div class="card">
+        <img src="img/Construction Rubble Sets.jpg" alt="Construction rubble preview" class="asset-img">
+        <div class="asset-title">Rubble Sets</div>
+        <ul class="asset-bullets">
+          <li>16 Variations</li>
+          <li>Includes Metal, concrete &amp; Brick Versions</li>
+        </ul>
+      </div>
+
+      <!-- remaining cards (original order preserved) -->
+      <div class="card">
+        <img src="img/Nature assets.jpg" alt="Nature essentials preview" class="asset-img">
+        <div class="asset-title">Nature Assets</div>
+        <ul class="asset-bullets">
+          <li>13 Grass variations</li>
+          <li>11 Stick/Log Variations</li>
+          <li>4 Rock variations</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <img src="img/Boxes.jpg" alt="Boxes preview" class="asset-img">
+        <div class="asset-title">Boxes</div>
+        <ul class="asset-bullets">
+          <li>20 Variations</li>
+          <li>Dirty and clean versions</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <img src="img/Bottles.jpg" alt="Bottles preview" class="asset-img">
+        <div class="asset-title">Bottles</div>
+        <ul class="asset-bullets">
+          <li>58 Variations</li>
+          <li>Crushed and uncrushed versions</li>
+          <li>Wide variety of plastic/Glass bottles, containers, broken glass and more</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <img src="img/Construciton debris.jpg" alt="Construction debris preview" class="asset-img">
+        <div class="asset-title">Construction Debris</div>
+        <ul class="asset-bullets">
+          <li>92 Variations</li>
+          <li>Wide variety of Steel, concrete, brick, Metal models </li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <img src="img/barrels.jpg" alt="Barrels preview" class="asset-img">
+        <div class="asset-title">Barrels</div>
+        <ul class="asset-bullets">
+          <li>10 Variations</li>
+          <li>Include metal and plastic versions</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <img src="img/Generic Trashpng.jpg" alt="Generic trash preview" class="asset-img">
+        <div class="asset-title">Generic Trash</div>
+        <ul class="asset-bullets">
+          <li>53 Variations</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <img src="img/Paint Cans.jpg" alt="Paint cans preview" class="asset-img">
+        <div class="asset-title">Paint Cans</div>
+        <ul class="asset-bullets">
+          <li>14 Variations</li>
+          <li>Include spray paint and bucket versions</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <img src="img/food.jpg" alt="Food preview" class="asset-img">
+        <div class="asset-title">Food</div>
+        <ul class="asset-bullets">
+          <li>33 Variations</li>
+          <li>Wide variety of options</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <img src="img/cans.jpg" alt="Cans preview" class="asset-img">
+        <div class="asset-title">Cans</div>
+        <ul class="asset-bullets">
+          <li>30 variations</li>
+          <li>food and drink versions</li>
+          <li>Crush and non crushed versions</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <img src="img/Small Trash.png" alt="Small trash preview" class="asset-img">
+        <div class="asset-title">Small Trash</div>
+        <ul class="asset-bullets">
+          <li>34 variations</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <img src="img/Tires.png" alt="Tires preview" class="asset-img">
+        <div class="asset-title">Tires</div>
+        <ul class="asset-bullets">
+          <li>4 Variations</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <img src="img/Garbage bins.jpg" alt="Garbage bins preview" class="asset-img">
+        <div class="asset-title">Garbage Bins</div>
+        <ul class="asset-bullets">
+          <li>19 variations</li>
+          <li>Small to large versions</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <img src="img/trash bags.jpg" alt="Garbage bags preview" class="asset-img">
+        <div class="asset-title">Garbage Bags</div>
+        <ul class="asset-bullets">
+          <li>10 variations</li>
+          <li>Includes Dirty and clean versions</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <img src="img/Tools.jpg" alt="Tools preview" class="asset-img">
+        <div class="asset-title">Tools</div>
+        <ul class="asset-bullets">
+          <li>14 Variations</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ────────────────── OTHER PRODUCTS ─────────────────── -->
+<section id="other-products">
+  <div class="feature-card">
+    <h2>My Other Products</h2>
+
+    <a href="https://superhivemarket.com/products/geo-swarm" target="_blank" rel="noopener noreferrer">
+      <img src="img/b1.png" alt="Geo Swarm" loading="lazy">
+    </a>
+
+    <a href="https://superhivemarket.com/products/geo-fish" target="_blank" rel="noopener noreferrer">
+      <img src="img\rounded fish.png" alt="Geo Fish" loading="lazy">
+    </a>
+
+    <a href="https://superhivemarket.com/products/auto-rig-pro-easy-animations" target="_blank" rel="noopener noreferrer">
+      <img src="img\thuimnail cover optimized 4.png" alt="Auto‑Rig Pro Easy Animations" loading="lazy">
+    </a>
+  </div>
+</section>
+
+  <!-- ─────────────────── FOOTER ─────────────────── -->
+  <footer>
+    © 2025 ScatterFlow Add‑on ·
+  </footer>
+</body>
+</html>
