@@ -4,17 +4,34 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ScatterFlow – World‑Building Add‑on for Blender</title>
+  <title>ScatterFlow – World-Building Add-on for Blender</title>
 
   <!-- Fonts & CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<!-- ────────────────── SALE BANNER ─────────────────── -->
-
 <body>
-  <!-- ─────────────────── HERO ─────────────────── -->
+  <!-- ─────────────────── SALE BANNER ─────────────────── -->
+  <div id="sale-banner" role="status" aria-live="polite" data-discount-code="Flow2.0">
+    <span class="ending-soon">25% OFF</span>
+
+    <span class="sale-msg">
+      <strong>New Update Sale!</strong> Ends in
+      <span id="countdown" aria-label="Sale ends in">5d 00h 00m 00s</span>
+    </span>
+
+    <!-- NEW: Discount code pill (copy button removed) -->
+    <span class="discount-pill" role="note" aria-label="Discount code">
+      Use code <kbd id="discount-code">scatterflow2</kbd>
+    </span>
+  </div>
+
+  <noscript>
+    <div class="no-js-banner">25% OFF — New Update Sale! Ends in 5 days. Use code Flow2.0.</div>
+  </noscript>
+
+  <!-- ─────────────────── HERO ─────────────────── -->
   <header>
     <h1>ScatterFlow</h1>
     <p class="lead">
@@ -22,157 +39,296 @@
     </p>
   </header>
 
-  <!-- ─────────────────── WATCH TRAILER ─────────────────── -->
+  <!-- ─────────────────── WATCH TRAILER + LATEST UPDATE ─────────────────── -->
   <section id="trailer">
-    <h2>Watch Trailer</h2>
-    <div class="trailer-video">
-      <iframe
-        src="https://www.youtube.com/embed/sFCY171RUwM?si=ye_FJLtsVT2_EUqZ"
-        title="ScatterFlow Trailer"
-        allowfullscreen
-      ></iframe>
+    <div class="media-grid">
+      <!-- Left: Trailer -->
+      <article class="media-card">
+        <h2>Check Out The Trailer</h2>
+        <div class="trailer-video">
+          <iframe
+            src="https://www.youtube.com/embed/SUxOZNIGhec?si=nnC1KE1Ob-FSrDVc"
+            title="ScatterFlow Trailer"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </article>
+
+      <!-- Right: Latest Update -->
+      <article class="media-card">
+        <h2>See Our Latest Update</h2>
+        <div class="trailer-video">
+          <iframe
+            src="https://www.youtube.com/embed/RloYza9voKE?si=Uz8ufR7o8p5ywGiU"
+            title="ScatterFlow – Latest Update"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </article>
     </div>
   </section>
 
-  <!-- ─────────────────── FEATURES ─────────────────── -->
-  <main style="max-width:var(--max-w);margin-inline:auto">
-    <!-- 2 — Single‑Click Physics Activation -->
-    <section class="feature">
-      <div class="text">
-        <h2>Drop objects with a single click</h2>
-        <p>Make selected objects fall with one click. No complicated setups—just press and drop.</p>
-      </div>
-      <div class="video">
-        <img src="img/singleclickclips-ezgif.com-optimize.gif" alt="Single‑click physics activation animation" />
-      </div>
-    </section>
-
-    <!-- 1 — Instant World Population -->
-    <section class="feature">
-      <div class="text">
-        <h2>Quick spawn objects</h2>
-        <p>
-          Quickly add assets from any collection. Great for creating piles, clutter, or filling containers.
-        </p>
-        <ul><li>Build out environments in seconds</li></ul>
-        <ul><li>Includes a continuous spawn mode—great for filling containers</li></ul>
-      </div>
-      <div class="video">
-        <img src="img/QUICKJSPAWNDFEMOv5-ezgif.com-optimize.gif" alt="Instant world population animation" />
-      </div>
-    </section>
-
-    <!-- 5 — Grid Scattering -->
-    <section class="feature">
-      <div class="text">
-        <h2>Grid Scattering</h2>
-        <p>
-          Perfect for stacking boxes, books, or anything that needs to be in a row.
-        </p>
-        <ul><li>Customizable count and spacing options for precision placement</li></ul>
-      </div>
-      <div class="video">
-        <img src="img/ARRAYDEMOV5-ezgif.com-optimize.gif" alt="Grid scattering animation" />
-      </div>
-    </section>
-
-    <!-- 6 — Manipulate Objects -->
-    <section class="feature">
-      <div class="text">
-        <h2>Object Manipulation</h2>
-        <p>
-          Interact with objects in your scene—pick them up, drag them, throw them, or place them exactly where you want.
-        </p>
-        <ul><li>Objects collide realistically with each other and the environment</li></ul>
-        <ul><li>Built-in hotkeys make dropping objects fast and intuitive</li></ul>
-      </div>
-      <div class="video">
-        <img src="img/maniplulkatedemo-ezgif.com-optimize.gif" alt="Manipulate objects animation" />
-      </div>
-    </section>
-
-    <!-- 4 — Surface Scattering (moved here) -->
-    <section class="feature">
-      <div class="text">
-        <h2>Scatter on Surfaces</h2>
-        <p>
-          Spawn objects across surfaces—ideal for large-scale scattering.
-        </p>
-        <ul><li>Fine-tune distribution using vertex groups</li></ul>
-        <ul><li>Physics are automatically applied on placement</li></ul>
-        <ul><li>Easily swap or randomize scattered assets.</li></ul>
-      </div>
-      <div class="video">
-        <img src="img/SCATTERSRUFACEDEMOV3-ezgif.com-optimize.gif" alt="Surface scattering animation" />
-      </div>
-    </section>
-
-    <!-- 3 — Duplicate, Move & Freeze -->
-    <section class="feature">
-      <div class="text">
-        <h2>Duplicate &amp; Move </h2>
-        <p>
-          Duplicate and reposition objects easily—great for quickly adding assets or refining their positions
-        </p>
-        <ul><li>Objects react and collide naturally while being moved</li></ul>
-      </div>
-      <div class="video">
-        <img src="img/DUPLICATEANDMOVEV2-ezgif.com-optimize.gif" alt="Duplicate, move &amp; freeze animation" />
-      </div>
-    </section>
-
-    <!-- 7 — Effortless Cloth Draping -->
-    <section class="feature">
-      <div class="text">
-        <h2>Cloth Draping</h2>
-        <p>Add realistic cloth in seconds—perfect for blankets, tarps, or anything that needs to drape naturally.</p>
-      </div>
-      <div class="video">
-        <img src="img/clothdemo-ezgif.com-optimize.gif" alt="Cloth draping animation" />
-      </div>
-    </section>
-  </main>
-
-  <!-- ────────────────── TRADITIONAL SCATTER ────────────────── -->
-  <section id="tradscatter">
-    <h2>Traditional Scatter <small>(Powered by OpenScatter)</small></h2>
-    <p style="max-width:var(--max-w);margin:0 auto 2.5rem;color:var(--txt-muted);text-align:center">
-      For artists who prefer classic geometry‑node workflows, ScatterFlow partners with
-      <strong><a href="https://superhivemarket.com/products/openscatter?search_id=40961755" target="_blank" rel="noopener noreferrer">Open&nbsp;Scatter</a></strong>
-     —an open-source toolset—to bring a full suite of node‑based scatter tools, right alongside our physics features.
-    </p>
-
-    <div class="grid">
-      <div class="card">
-        <img src="img/Open scatter combined.gif" alt="Powerful Scatter Options" class="trad-img">
-        <div class="trad-title">Powerful Scatter Options</div>
-        <p class="trad-desc">Such as Noise, Rows, Height, Proximity & More</p>
-      </div>
-      <div class="card">
-        <img src="img/optimization combines.gif" alt="Slope &amp; altitude" class="trad-img">
-        <div class="trad-title">Optimization Tools</div>
-        <p class="trad-desc">Speed up viewport performance with Camera Culling, Proxy Objects & More</p>
-      </div>
-      <div class="card">
-        <img src="img/animation.gif" alt="Pattern based scatter" class="trad-img">
-        <div class="trad-title">Animation Support</div>
-      </div>
+  <!-- ────────────────── PHYSICS SCATTER ────────────────── -->
+  <section id="physics-scatter">
+    <div class="section-head">
+      <h2>Physics Scatter</h2>
+      <p class="section-subtitle" style="max-width:var(--max-w);margin:0 auto 0;color:var(--txt-muted);text-align:center"></p>
     </div>
+
+    <!-- ─────────────────── FEATURES ─────────────────── -->
+    <main class="feature-stack" style="max-width:var(--max-w);margin-inline:auto">
+      <!-- 2 — Single-Click Physics Activation -->
+      <section class="feature">
+        <div class="text">
+          <h2>Drop objects with a single click</h2>
+          <p>Make selected objects fall with one click. No complicated setups—just press and drop.</p>
+        </div>
+        <div class="video">
+          <img src="img/singleclickclips-ezgif.com-optimize.gif" alt="Single-click physics activation animation" />
+        </div>
+      </section>
+
+      <!-- 1 — Instant World Population -->
+      <section class="feature">
+        <div class="text">
+          <h2>Quickly spawn objects</h2>
+          <p>
+            Quickly add assets from any collection. Great for creating piles, clutter, or filling containers.
+          </p>
+          <ul><li>Build out environments in seconds</li></ul>
+          <ul><li>Includes a continuous spawn mode—great for filling containers</li></ul>
+        </div>
+        <div class="video">
+          <img src="img/QUICKJSPAWNDFEMOv5-ezgif.com-optimize.gif" alt="Instant world population animation" />
+        </div>
+      </section>
+
+      <!-- 5 — Grid Scattering -->
+      <section class="feature">
+        <div class="text">
+          <h2>Grid Scattering</h2>
+          <p>
+            Perfect for stacking boxes, books, or anything that needs to be in a row.
+          </p>
+          <ul><li>Customizable count and spacing options for precision placement</li></ul>
+        </div>
+        <div class="video">
+          <img src="img/ARRAYDEMOV5-ezgif.com-optimize.gif" alt="Grid scattering animation" />
+        </div>
+      </section>
+
+      <!-- 6 — Manipulate Objects -->
+      <section class="feature">
+        <div class="text">
+          <h2>Object Manipulation</h2>
+          <p>
+            Interact with objects in your scene—pick them up, drag them, throw them, or place them exactly where you want.
+          </p>
+          <ul><li>Objects collide realistically with each other and the environment</li></ul>
+          <ul><li>Built-in hotkeys make dropping objects fast and intuitive</li></ul>
+        </div>
+        <div class="video">
+          <img src="img/maniplulkatedemo-ezgif.com-optimize.gif" alt="Manipulate objects animation" />
+        </div>
+      </section>
+
+      <!-- 4 — Surface Scattering -->
+      <section class="feature">
+        <div class="text">
+          <h2>Scatter on Surfaces</h2>
+          <p>
+            Spawn objects across surfaces—ideal for large-scale scattering.
+          </p>
+          <ul><li>Fine-tune distribution using vertex groups</li></ul>
+          <ul><li>Physics is automatically applied on placement</li></ul>
+          <ul><li>Easily swap or randomize scattered assets.</li></ul>
+        </div>
+        <div class="video">
+          <img src="img/SCATTERSRUFACEDEMOV3-ezgif.com-optimize.gif" alt="Surface scattering animation" />
+        </div>
+      </section>
+
+      <!-- 3 — Duplicate, Move & Freeze -->
+      <section class="feature">
+        <div class="text">
+          <h2>Duplicate &amp; Move</h2>
+          <p>
+            Duplicate and reposition objects easily—great for quickly adding assets or refining their positions.
+          </p>
+          <ul><li>Objects react and collide naturally while being moved</li></ul>
+        </div>
+        <div class="video">
+          <img src="img/DUPLICATEANDMOVEV2-ezgif.com-optimize.gif" alt="Duplicate, move &amp; freeze animation" />
+        </div>
+      </section>
+
+      <!-- 7 — Effortless Cloth Draping -->
+      <section class="feature">
+        <div class="text">
+          <h2>Cloth Draping</h2>
+          <p>Add realistic cloth in seconds—perfect for blankets, tarps, or anything that needs to drape naturally.</p>
+        </div>
+        <div class="video">
+          <img src="img/clothdemo-ezgif.com-optimize.gif" alt="Cloth draping animation" />
+        </div>
+      </section>
+    </main>
   </section>
 
-  <!-- ────────────────── STARTER ASSETS ────────────────── -->
+  <!-- ────────────────── DECAL SCATTER ────────────────── -->
+  <section id="decal-scatter">
+    <div class="section-head">
+      <h2>
+        Decal Scatter
+        <span class="sticker-new sticker-new--lg" role="note" aria-label="New">NEW</span>
+      </h2>
+      <p class="section-subtitle" style="max-width:var(--max-w);margin:0 auto;color:var(--txt-muted);text-align:center">
+        Add decals to your objects with just a click
+      </p>
+    </div>
+
+    <!-- ─────────────────── FEATURES ─────────────────── -->
+    <main class="feature-stack" style="max-width:var(--max-w);margin-inline:auto">
+      <section class="feature">
+        <div class="text">
+          <h2>Add decals in seconds</h2>
+          <p>Quickly add decals to your objects—perfect for graffiti, tattoos, posters, and more.</p>
+        </div>
+        <div class="video">
+          <img src="img/decaltogif1-ezgif.com-optimize.gif" alt="Single-click physics activation animation" />
+        </div>
+      </section>
+
+      <section class="feature">
+        <div class="text">
+          <h2>Decal Damage</h2>
+          <p>
+            Blend your decals with a built-in surface damage effect for instant realism.
+          </p>
+        </div>
+        <div class="video">
+          <img src="img/decaltogif2-ezgif.com-optimize.gif" alt="Instant world population animation" />
+        </div>
+      </section>
+    </main>
+  </section>
+
+  <!-- ────────────────── TRADITIONAL SCATTER ────────────────── -->
+  <section id="traditional-scatter">
+    <div class="section-head">
+      <h2>Traditional Scatter <small>(Powered by OpenScatter)</small></h2>
+      <p class="section-subtitle" style="max-width:var(--max-w);margin:0 auto;color:var(--txt-muted);text-align:center">
+        For artists who prefer classic workflows, ScatterFlow partners with
+        <strong><a href="https://superhivemarket.com/products/openscatter?search_id=40961755" target="_blank" rel="noopener noreferrer">Open&nbsp;Scatter</a></strong>
+        —an open-source toolset—to bring a full suite of node-based scatter tools, right alongside our physics features.
+      </p>
+    </div>
+
+    <main class="feature-stack" style="max-width:var(--max-w);margin-inline:auto">
+      <section class="feature">
+        <div class="text">
+          <h2>Quick And Easy Scattering</h2>
+          <p>Our scattering system makes it simple to create advanced scatter effects — letting you build environments in seconds, not hours.</p>
+        </div>
+        <div class="video">
+          <img src="img/Timeline1-ezgif.com-optimize.gif" alt="Quick and easy scattering animation" />
+        </div>
+      </section>
+
+      <section class="feature">
+        <div class="text">
+          <h2>Proximity tools</h2>
+          <p>Control growth behavior — attract, repel, or follow specific targets.</p>
+        </div>
+        <div class="video">
+          <img src="img/Attractandrepelfeatures-ezgif.com-video-to-gif-converter.gif" alt="Proximity tools animation" />
+        </div>
+      </section>
+
+      <section class="feature">
+        <div class="text">
+          <h2>Precision Control</h2>
+          <p>Take full control of your scatter placement by using weight painting, slope limits, and elevation masks to guide exactly where things grow.</p>
+        </div>
+        <div class="video">
+          <img src="img/finetunecontrioals-ezgif.com-optimize.gif" alt="Precision control animation" />
+        </div>
+      </section>
+
+      <section class="feature">
+        <div class="text">
+          <h2>Optimization Tools</h2>
+          <p>Keep your scenes fast and responsive by using smart performance features like camera culling, proxy meshes, and density overrides to stay smooth—even in heavy environments.</p>
+        </div>
+        <div class="video">
+          <img src="img/opttimixationttols-ezgif.com-video-to-gif-converter.gif" alt="Optimization tools animation" />
+        </div>
+      </section>
+
+      <section class="feature">
+        <div class="text">
+          <h2>Interactive Environments</h2>
+          <p>Bring life to your scatter setups with motion. React to wind and collisions for dynamic environments that feel alive.</p>
+        </div>
+        <div class="video">
+          <img src="img/windandcollsionscobined-ezgif.com-optimize.gif" alt="Interactive environments animation" />
+        </div>
+      </section>
+    </main>
+  </section>
+
+  <!-- ────────────────── STARTER ASSETS ────────────────── -->
   <section id="assets">
-    <h2>Starter Asset Pack <small>(optional)</small></h2>
+    <div class="section-head">
+      <h2>Starter Asset Pack <small>(optional)</small></h2>
 
-    <p class="assets-lead">
-      over 450+ props and set pieces to help you get started
-    </p>
+      <p class="assets-lead section-subtitle">
+        over 600+ props and set pieces to help you get started
+      </p>
+    </div>
 
-    <img src="img/collage.png" alt="Starter Asset Pack hero" class="assets-hero">
+    <!-- Compatibility callout (image placeholder removed) -->
+    <div class="compat-card" role="note" aria-label="Compatibility Note">
+      <div class="compat-body">
+        <h3 class="compat-title">Fully compatible with your favorite scatter tools</h3>
+        <p class="compat-text">
+          Works great with <strong>GeoScatter</strong>, <strong>Botaniq</strong>, and <strong>more</strong>. Also includes support for Blender’s newest <strong>5.0 Scatter toolset</strong>.
+        </p>
+        <ul class="compat-logos" aria-label="Supported tools">
+          <li class="logo-chip">GeoScatter</li>
+          <li class="logo-chip">Botaniq</li>
+          <li class="logo-chip">Blender 5.0 Scatter</li>
+        </ul>
+      </div>
+    </div>
 
-    <div class="grid">
-      <!-- 1 — Trash Sets -->
-      <div class="card">
+    <!-- BIG TABS -->
+    <div class="asset-tabs" role="tablist" aria-label="Starter assets filter">
+      <button class="asset-tab is-active" role="tab" aria-selected="true" aria-controls="assets-grid" data-filter="nature">
+        Nature
+        <span class="sticker-new" role="note" aria-label="New">NEW</span>
+      </button>
+      <button class="asset-tab" role="tab" aria-selected="false" aria-controls="assets-grid" data-filter="trash">Trash</button>
+      <button class="asset-tab" role="tab" aria-selected="false" aria-controls="assets-grid" data-filter="decals">
+        Decals
+        <span class="sticker-new" role="note" aria-label="New">NEW</span>
+      </button>
+    </div>
+
+    <!-- SLIDER -->
+    <div class="asset-slider" aria-label="Asset renders carousel" tabindex="0">
+      <button class="slider-nav prev" type="button" aria-label="Previous slide" tabindex="0">‹</button>
+      <div class="slider-viewport">
+        <div class="slider-track" aria-live="polite"></div>
+      </div>
+      <button class="slider-nav next" type="button" aria-label="Next slide" tabindex="0">›</button>
+      <div class="slider-dots" role="tablist" aria-label="Slide dots"></div>
+    </div>
+
+    <!-- GRID -->
+    <div id="assets-grid" class="grid" data-default="nature">
+      <!-- Trash -->
+      <div class="card" data-cat="trash">
         <img src="img/trash sets.jpg" alt="Trash sets preview" class="asset-img">
         <div class="asset-title">Trash Sets</div>
         <p class="asset-desc">Premade sets for quick drag and drop scene building</p>
@@ -181,8 +337,7 @@
         </ul>
       </div>
 
-      <!-- 2 — Rubble Sets -->
-      <div class="card">
+      <div class="card" data-cat="trash">
         <img src="img/Construction Rubble Sets.jpg" alt="Construction rubble preview" class="asset-img">
         <div class="asset-title">Rubble Sets</div>
         <ul class="asset-bullets">
@@ -191,18 +346,17 @@
         </ul>
       </div>
 
-      <!-- remaining cards (original order preserved) -->
-      <div class="card">
-        <img src="img/Nature assets.jpg" alt="Nature essentials preview" class="asset-img">
-        <div class="asset-title">Nature Assets</div>
+      <!-- Nature -->
+      <div class="card" data-cat="nature">
+        <img src="img/bamboo resized.jpg" alt="Bamboo preview" class="asset-img">
+        <div class="asset-title">Bamboo</div>
         <ul class="asset-bullets">
-          <li>13 Grass variations</li>
-          <li>11 Stick/Log Variations</li>
-          <li>4 Rock variations</li>
+          <li>4 Variations</li>
         </ul>
       </div>
 
-      <div class="card">
+      <!-- rest of Trash -->
+      <div class="card" data-cat="trash">
         <img src="img/Boxes.jpg" alt="Boxes preview" class="asset-img">
         <div class="asset-title">Boxes</div>
         <ul class="asset-bullets">
@@ -211,7 +365,7 @@
         </ul>
       </div>
 
-      <div class="card">
+      <div class="card" data-cat="trash">
         <img src="img/Bottles.jpg" alt="Bottles preview" class="asset-img">
         <div class="asset-title">Bottles</div>
         <ul class="asset-bullets">
@@ -221,7 +375,7 @@
         </ul>
       </div>
 
-      <div class="card">
+      <div class="card" data-cat="trash">
         <img src="img/Construciton debris.jpg" alt="Construction debris preview" class="asset-img">
         <div class="asset-title">Construction Debris</div>
         <ul class="asset-bullets">
@@ -230,7 +384,7 @@
         </ul>
       </div>
 
-      <div class="card">
+      <div class="card" data-cat="trash">
         <img src="img/barrels.jpg" alt="Barrels preview" class="asset-img">
         <div class="asset-title">Barrels</div>
         <ul class="asset-bullets">
@@ -239,7 +393,7 @@
         </ul>
       </div>
 
-      <div class="card">
+      <div class="card" data-cat="trash">
         <img src="img/Generic Trashpng.jpg" alt="Generic trash preview" class="asset-img">
         <div class="asset-title">Generic Trash</div>
         <ul class="asset-bullets">
@@ -247,7 +401,7 @@
         </ul>
       </div>
 
-      <div class="card">
+      <div class="card" data-cat="trash">
         <img src="img/Paint Cans.jpg" alt="Paint cans preview" class="asset-img">
         <div class="asset-title">Paint Cans</div>
         <ul class="asset-bullets">
@@ -256,7 +410,7 @@
         </ul>
       </div>
 
-      <div class="card">
+      <div class="card" data-cat="trash">
         <img src="img/food.jpg" alt="Food preview" class="asset-img">
         <div class="asset-title">Food</div>
         <ul class="asset-bullets">
@@ -265,7 +419,7 @@
         </ul>
       </div>
 
-      <div class="card">
+      <div class="card" data-cat="trash">
         <img src="img/cans.jpg" alt="Cans preview" class="asset-img">
         <div class="asset-title">Cans</div>
         <ul class="asset-bullets">
@@ -275,7 +429,7 @@
         </ul>
       </div>
 
-      <div class="card">
+      <div class="card" data-cat="trash">
         <img src="img/Small Trash.png" alt="Small trash preview" class="asset-img">
         <div class="asset-title">Small Trash</div>
         <ul class="asset-bullets">
@@ -283,7 +437,7 @@
         </ul>
       </div>
 
-      <div class="card">
+      <div class="card" data-cat="trash">
         <img src="img/Tires.png" alt="Tires preview" class="asset-img">
         <div class="asset-title">Tires</div>
         <ul class="asset-bullets">
@@ -291,7 +445,7 @@
         </ul>
       </div>
 
-      <div class="card">
+      <div class="card" data-cat="trash">
         <img src="img/Garbage bins.jpg" alt="Garbage bins preview" class="asset-img">
         <div class="asset-title">Garbage Bins</div>
         <ul class="asset-bullets">
@@ -300,7 +454,7 @@
         </ul>
       </div>
 
-      <div class="card">
+      <div class="card" data-cat="trash">
         <img src="img/trash bags.jpg" alt="Garbage bags preview" class="asset-img">
         <div class="asset-title">Garbage Bags</div>
         <ul class="asset-bullets">
@@ -309,38 +463,424 @@
         </ul>
       </div>
 
-      <div class="card">
+      <div class="card" data-cat="trash">
         <img src="img/Tools.jpg" alt="Tools preview" class="asset-img">
         <div class="asset-title">Tools</div>
         <ul class="asset-bullets">
           <li>14 Variations</li>
         </ul>
       </div>
+
+      <!-- Nature — Trees & Plants -->
+      <div class="card" data-cat="nature">
+        <img src="img/Spruce resized.jpg" alt="Spruce Trees preview" class="asset-img">
+        <div class="asset-title">Spruce Trees</div>
+        <ul class="asset-bullets">
+          <li>4 Variations</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="nature">
+        <img src="img/Redwood resized.jpg" alt="Redwood Trees preview" class="asset-img">
+        <div class="asset-title">Redwood Trees</div>
+        <ul class="asset-bullets">
+          <li>4 Variations</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="nature">
+        <img src="img/coconut  resized.jpg" alt="Coconut Trees preview" class="asset-img">
+        <div class="asset-title">Coconut Trees</div>
+        <ul class="asset-bullets">
+          <li>6 Variations</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="nature">
+        <img src="img/Pine Resized.jpg" alt="Pine Trees preview" class="asset-img">
+        <div class="asset-title">Pine Trees</div>
+        <ul class="asset-bullets">
+          <li>4 Variations</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="nature">
+        <img src="img/Oak resized.jpg" alt="Oak Trees preview" class="asset-img">
+        <div class="asset-title">Oak Trees</div>
+        <ul class="asset-bullets">
+          <li>4 Variations</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="nature">
+        <img src="img/cheery blossom resized.jpg" alt="Cherry Blossom Trees preview" class="asset-img">
+        <div class="asset-title">Cherry Blossom Trees</div>
+        <ul class="asset-bullets">
+          <li>4 Variations</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="nature">
+        <img src="img/Willow tree resized2.jpg" alt="Willow Trees preview" class="asset-img">
+        <div class="asset-title">Willow Trees</div>
+        <ul class="asset-bullets">
+          <li>4 Variations</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="nature">
+        <img src="img/bushes.png" alt="Bushes preview" class="asset-img">
+        <div class="asset-title">Bushes</div>
+        <ul class="asset-bullets">
+          <li>4 Variations</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="nature">
+        <img src="img/Flower bushes resized.jpg" alt="Flower Bushes preview" class="asset-img">
+        <div class="asset-title">Flower Bushes</div>
+        <ul class="asset-bullets">
+          <li>4 Variations</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="nature">
+        <img src="img/Fountain grass resized.jpg" alt="Fountain Grass preview" class="asset-img">
+        <div class="asset-title">Fountain Grass</div>
+        <ul class="asset-bullets">
+          <li>4 Variations</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="nature">
+        <img src="img/ferns.png" alt="Ferns preview" class="asset-img">
+        <div class="asset-title">Ferns</div>
+        <ul class="asset-bullets">
+          <li>4 Variations</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="nature">
+        <img src="img/cactus reasized.jpg" alt="Cactus preview" class="asset-img">
+        <div class="asset-title">Cactus</div>
+        <ul class="asset-bullets">
+          <li>4 Variations</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="nature">
+        <img src="img/Hanging ivy resized.jpg" alt="Hanging Ivy preview" class="asset-img">
+        <div class="asset-title">Hanging Ivy</div>
+        <ul class="asset-bullets">
+          <li>4 Variations</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="nature">
+        <img src="img/Grass resized.jpg" alt="Grass preview" class="asset-img">
+        <div class="asset-title">Grass</div>
+        <ul class="asset-bullets">
+          <li>14 Variations</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="nature">
+        <img src="img/Rock resized.jpg" alt="Rocks preview" class="asset-img">
+        <div class="asset-title">Rocks</div>
+        <ul class="asset-bullets">
+          <li>8 Variations</li>
+        </ul>
+      </div>
+
+      <div class="card" data-cat="nature">
+        <img src="img/Stick resized.jpg" alt="Sticks preview" class="asset-img">
+        <div class="asset-title">Sticks</div>
+        <ul class="asset-bullets">
+          <li>9 Variations</li>
+        </ul>
+      </div>
+
+      <!-- Decals -->
+      <div class="card" data-cat="decals">
+        <img src="img/decal collection.jpg" alt="Tattoos" class="asset-img">
+        <div class="asset-title">Tattoos</div>
+        <p class="asset-desc">Placeholder item</p>
+      </div>
+
+      <div class="card" data-cat="decals">
+        <img src="img/flyers colleciton.jpg" alt="Flyers" class="asset-img">
+        <div class="asset-title">Flyers</div>
+        <p class="asset-desc">Placeholder item</p>
+      </div>
+
+      <div class="card" data-cat="decals">
+        <img src="img/Old Newpaper colletion.jpg" alt="Torn Paper" class="asset-img">
+        <div class="asset-title">Torn Paper</div>
+        <p class="asset-desc">Placeholder item</p>
+      </div>
+
+      <div class="card" data-cat="decals">
+        <img src="img/signs colleciton.jpg" alt="Signs" class="asset-img">
+        <div class="asset-title">Signs</div>
+        <p class="asset-desc">Placeholder item</p>
+      </div>
+
+      <div class="card" data-cat="decals">
+        <img src="img/graffity colleciton.jpg" alt="Graffiti" class="asset-img">
+        <div class="asset-title">Graffiti</div>
+        <p class="asset-desc">Placeholder item</p>
+      </div>
     </div>
   </section>
 
   <!-- ────────────────── OTHER PRODUCTS ─────────────────── -->
-<section id="other-products">
-  <div class="feature-card">
-    <h2>My Other Products</h2>
+  <section id="other-products">
+    <div class="feature-card">
+      <h2>My Other Products</h2>
 
-    <a href="https://superhivemarket.com/products/geo-swarm" target="_blank" rel="noopener noreferrer">
-      <img src="img/b1.png" alt="Geo Swarm" loading="lazy">
-    </a>
+      <a href="https://superhivemarket.com/products/geo-swarm" target="_blank" rel="noopener noreferrer">
+        <img src="img/b1.png" alt="Geo Swarm" loading="lazy">
+      </a>
 
-    <a href="https://superhivemarket.com/products/geo-fish" target="_blank" rel="noopener noreferrer">
-      <img src="img\rounded fish.png" alt="Geo Fish" loading="lazy">
-    </a>
+      <a href="https://superhivemarket.com/products/geo-fish" target="_blank" rel="noopener noreferrer">
+        <img src="img/rounded fish.png" alt="Geo Fish" loading="lazy">
+      </a>
 
-    <a href="https://superhivemarket.com/products/auto-rig-pro-easy-animations" target="_blank" rel="noopener noreferrer">
-      <img src="img\thuimnail cover optimized 4.png" alt="Auto‑Rig Pro Easy Animations" loading="lazy">
-    </a>
-  </div>
-</section>
+      <a href="https://superhivemarket.com/products/auto-rig-pro-easy-animations" target="_blank" rel="noopener noreferrer">
+        <img src="img/thuimnail cover optimized 4.png" alt="Auto-Rig Pro Easy Animations" loading="lazy">
+      </a>
+    </div>
+  </section>
 
-  <!-- ─────────────────── FOOTER ─────────────────── -->
+  <!-- ─────────────────── FOOTER ─────────────────── -->
   <footer>
-    © 2025 ScatterFlow Add‑on ·
+    © 2025 ScatterFlow Add-on ·
   </footer>
+
+  <!-- ─────────────────── COUNTDOWN SCRIPT ─────────────────── -->
+  <script>
+    (function () {
+      // Persist a single 5-day window across reloads
+      const KEY = 'sfSaleEnds';
+      const now = Date.now();
+      let deadline = localStorage.getItem(KEY);
+      if (!deadline) {
+        deadline = now + 5 * 24 * 60 * 60 * 1000;
+        localStorage.setItem(KEY, String(deadline));
+      } else {
+        deadline = Number(deadline);
+        if (!Number.isFinite(deadline) || deadline < now) {
+          deadline = now + 5 * 24 * 60 * 60 * 1000;
+          localStorage.setItem(KEY, String(deadline));
+        }
+      }
+
+      const el = document.getElementById('countdown');
+      const banner = document.getElementById('sale-banner');
+
+      function pad(n){ return String(n).padStart(2,'0'); }
+
+      function tick(){
+        const t = Math.max(0, deadline - Date.now());
+        const d = Math.floor(t / (24*60*60*1000));
+        const h = Math.floor((t % (24*60*60*1000)) / (60*60*1000));
+        const m = Math.floor((t % (60*60*1000)) / (60*1000));
+        const s = Math.floor((t % (60*1000)) / 1000);
+        if (el) el.textContent = `${d}d ${pad(h)}h ${pad(m)}m ${pad(s)}s`;
+
+        if (t <= 0) {
+          clearInterval(int);
+          if (banner) {
+            banner.classList.add('sale-ended');
+            banner.innerHTML = '<span class="sale-ended-msg">Sale ended — follow for the next drop!</span>';
+          }
+        }
+      }
+      const int = setInterval(tick, 1000);
+      tick();
+    })();
+  </script>
+
+  <!-- (Copy button script removed) -->
+
+  <!-- ─────────────────── TABS + SLIDER SCRIPT ─────────────────── -->
+  <script>
+    (function () {
+      const grid = document.getElementById('assets-grid');
+      const tabs = Array.from(document.querySelectorAll('.asset-tab'));
+      const cards = Array.from(grid.querySelectorAll('.card'));
+
+      // Slider nodes
+      const slider = document.querySelector('.asset-slider');
+      const track  = slider.querySelector('.slider-track');
+      const dotsEl = slider.querySelector('.slider-dots');
+      const prevBtn = slider.querySelector('.slider-nav.prev');
+      const nextBtn = slider.querySelector('.slider-nav.next');
+
+      let slideIndex = 0;
+      let slides = [];
+
+      // ---- CUSTOM PATHS: ONLY these are used in the slider now ----
+      const customPaths = {
+        nature: [
+          "img/cocunnit tree render 2 1080.jpg",
+          "img/cactus showcase 4 1080.jpg",
+          "img/bamboo render 3 1080.jpg",
+          "img/fountain grass showcase 21080.jpg"
+        ],
+        trash: [
+          "img/trash1 resized.jpg",
+          "img/trash bagas resized.jpg",
+          "img/tires 1 resized.jpg",
+          "img/barrels 1 resized.jpg"
+        ],
+        decals: [
+          "img/tatoo render.jpg",
+          "img/wal decal.jpg",
+          "img/grafiity render.jpg"
+        ]
+      };
+
+      // Keep track of current filter
+      let currentFilter = grid.getAttribute('data-default') || 'nature';
+
+      function isVisibleForFilter(card, filter) {
+        const cat = card.getAttribute('data-cat');
+        if (filter === 'nature') return cat === 'nature';
+        if (filter === 'trash') return (cat !== 'nature' && cat !== 'decals');
+        if (filter === 'decals') return cat === 'decals';
+        return false;
+      }
+
+      function normalizeToUrlish(str){
+        let s = (str || '').trim();
+        if (!s) return null;
+
+        const winDrive = /^[a-zA-Z]:[\\/]/.test(s);
+        const unc      = /^\\\\/.test(s);
+
+        if (winDrive){
+          s = 'file:///' + s.replace(/\\/g,'/').replace(/^([a-zA-Z]):\//,'$1:/');
+          return s;
+        }
+        if (unc){
+          s = 'file:////' + s.replace(/\\/g,'/').replace(/^\\\\/,'');
+          return s;
+        }
+        if (/^(file:\/\/|https?:\/\/|data:)/i.test(s)) return s;
+        if (s.startsWith('/')) return 'file://' + s; // unix abs path
+        return s; // relative
+      }
+
+      function gatherSlideSrcs(filter) {
+        const customs = (customPaths[filter] || [])
+          .map(normalizeToUrlish)
+          .filter(Boolean);
+        return customs.filter((src, i, arr) => arr.indexOf(src) === i);
+      }
+
+      function updateSliderUI() {
+        const pct = -(slideIndex * 100);
+        track.style.transform = `translateX(${pct}%)`;
+        Array.from(track.children).forEach((el, i) => {
+          el.setAttribute('aria-hidden', i === slideIndex ? 'false' : 'true');
+        });
+        dotsEl.querySelectorAll('.dot').forEach((d, i) => {
+          d.classList.toggle('is-active', i === slideIndex);
+        });
+      }
+
+      function attachDotHandlers() {
+        dotsEl.querySelectorAll('.dot').forEach(btn => {
+          btn.addEventListener('click', () => {
+            slideIndex = Number(btn.dataset.idx) || 0;
+            updateSliderUI();
+          });
+        });
+      }
+
+      function rebuildSliderFor(filter) {
+        slides = gatherSlideSrcs(filter);
+        slideIndex = 0;
+
+        if (!slides.length) {
+          slider.style.display = 'none';
+          track.innerHTML = '';
+          dotsEl.innerHTML = '';
+          return;
+        }
+
+        slider.style.display = '';
+
+        // Build slides
+        track.innerHTML = slides.map((src, i) =>
+          `<div class="slide" aria-hidden="${i === 0 ? 'false' : 'true'}">
+             <img src="${src}" alt="Asset render ${i+1}" loading="lazy" />
+           </div>`
+        ).join('');
+
+        // Build dots
+        dotsEl.innerHTML = slides.map((_, i) =>
+          `<button class="dot${i===0?' is-active':''}" role="tab" aria-label="Go to slide ${i+1}" data-idx="${i}"></button>`
+        ).join('');
+
+        updateSliderUI();
+        attachDotHandlers();
+      }
+
+      function goNext() {
+        slideIndex = (slideIndex + 1) % slides.length;
+        updateSliderUI();
+      }
+      function goPrev() {
+        slideIndex = (slideIndex - 1 + slides.length) % slides.length;
+        updateSliderUI();
+      }
+
+      prevBtn.addEventListener('click', goPrev);
+      nextBtn.addEventListener('click', goNext);
+
+      // keyboard control for slider
+      slider.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') { e.preventDefault(); goPrev(); }
+        if (e.key === 'ArrowRight') { e.preventDefault(); goNext(); }
+      });
+
+      // Tabs: click + arrow keys
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => applyFilter(tab.dataset.filter));
+        tab.addEventListener('keydown', (e) => {
+          if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+          e.preventDefault();
+          const idx = tabs.indexOf(document.activeElement);
+          const nextIdx = e.key === 'ArrowRight'
+            ? (idx + 1) % tabs.length
+            : (idx - 1 + tabs.length) % tabs.length;
+          tabs[nextIdx].focus();
+        });
+      });
+
+      function applyFilter(filter) {
+        // tabs visual state
+        tabs.forEach(t => {
+          const active = t.dataset.filter === filter;
+          t.classList.toggle('is-active', active);
+          t.setAttribute('aria-selected', active ? 'true' : 'false');
+          t.tabIndex = active ? 0 : -1;
+        });
+
+        // card visibility (unchanged)
+        cards.forEach(card => {
+          const visible = isVisibleForFilter(card, filter);
+          card.style.display = visible ? '' : 'none';
+        });
+
+        rebuildSliderFor(filter);
+      }
+
+      // init
+      applyFilter(currentFilter);
+    })();
+  </script>
 </body>
 </html>
