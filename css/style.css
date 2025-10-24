@@ -55,6 +55,11 @@ p.lead{max-width:760px;margin-inline:auto;color:var(--txt-muted);font-size:1.05r
   grid-template-columns:1fr;
   gap:1.5rem;
 }
+/* ↓↓↓ CHANGED: lower breakpoint so two trailers fit side-by-side on an 800px page */
+@media (min-width: 760px){
+  .media-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
 .media-card{
   background:var(--bg);
   border:1px solid #1f2030;
@@ -62,9 +67,6 @@ p.lead{max-width:760px;margin-inline:auto;color:var(--txt-muted);font-size:1.05r
   box-shadow:var(--shadow);
   padding:1rem;
   overflow:hidden;
-}
-@media (min-width: 860px){
-  .media-grid{ grid-template-columns:1fr 1fr; }
 }
 
 .trailer-video{
@@ -231,7 +233,9 @@ img{border-radius:.75rem !important}
   top:0;
   left:0;
   text-align:center;
-  width:calc(100% - 1rem);
+  /* ↓↓↓ CHANGED: slightly narrower so it doesn't feel edge-to-edge */
+  width:calc(100% - 2rem); /* was: calc(100% - 1rem) */
+  max-width:calc(var(--max-w) - 2rem);
   margin:.5rem auto 0;
   padding:1rem .85rem;
   font-size:clamp(1.05rem,2.1vw,1.4rem);
@@ -604,7 +608,7 @@ img{border-radius:.75rem !important}
   justify-content:center;
   padding:.12em .5em;
   margin-left:.5rem;
-  background:#ffd400;
+  background:#eaff00;
   color:#0d0d12;
   border-radius:.6em;
   font-weight:900;
