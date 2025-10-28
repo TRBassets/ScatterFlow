@@ -659,47 +659,43 @@
 
   <!-- ─────────────────── COUNTDOWN SCRIPT ─────────────────── -->
   <script>
-    (function () {
-      // Persist a single 5-day window across reloads
-      const KEY = 'sfSaleEnds';
-      const now = Date.now();
-      let deadline = localStorage.getItem(KEY);
-      if (!deadline) {
-        deadline = now + 5 * 24 * 60 * 60 * 1000;
-        localStorage.setItem(KEY, String(deadline));
-      } else {
-        deadline = Number(deadline);
-        if (!Number.isFinite(deadline) || deadline < now) {
-          deadline = now + 5 * 24 * 60 * 60 * 1000;
-          localStorage.setItem(KEY, String(deadline));
+  (function () {
+    // Persist a single 2-day window across reloads
+    const KEY = 'sfSaleEnds_v2';          // new key so old 5-day value doesn't stick
+    const TWO_DAYS_MS = 2 * 24 * 60 * 60 * 1000;
+
+    const now = Date.now();
+    let deadline = Number(localStorage.getItem(KEY));
+    if (!Number.isFinite(deadline) || deadline < now) {
+      deadline = now + TWO_DAYS_MS;
+      localStorage.setItem(KEY, String(deadline));
+    }
+
+    const el = document.getElementById('countdown');
+    const banner = document.getElementById('sale-banner');
+
+    function pad(n){ return String(n).padStart(2,'0'); }
+
+    function tick(){
+      const t = Math.max(0, deadline - Date.now());
+      const d = Math.floor(t / 86400000);
+      const h = Math.floor((t % 86400000) / 3600000);
+      const m = Math.floor((t % 3600000) / 60000);
+      const s = Math.floor((t % 60000) / 1000);
+      if (el) el.textContent = `${d}d ${pad(h)}h ${pad(m)}m ${pad(s)}s`;
+
+      if (t <= 0) {
+        clearInterval(int);
+        if (banner) {
+          banner.classList.add('sale-ended');
+          banner.innerHTML = '<span class="sale-ended-msg">Sale ended — follow for the next drop!</span>';
         }
       }
-
-      const el = document.getElementById('countdown');
-      const banner = document.getElementById('sale-banner');
-
-      function pad(n){ return String(n).padStart(2,'0'); }
-
-      function tick(){
-        const t = Math.max(0, deadline - Date.now());
-        const d = Math.floor(t / (24*60*60*1000));
-        const h = Math.floor((t % (24*60*60*1000)) / (60*60*1000));
-        const m = Math.floor((t % (60*60*1000)) / (60*1000));
-        const s = Math.floor((t % (60*1000)) / 1000);
-        if (el) el.textContent = `${d}d ${pad(h)}h ${pad(m)}m ${pad(s)}s`;
-
-        if (t <= 0) {
-          clearInterval(int);
-          if (banner) {
-            banner.classList.add('sale-ended');
-            banner.innerHTML = '<span class="sale-ended-msg">Sale ended — follow for the next drop!</span>';
-          }
-        }
-      }
-      const int = setInterval(tick, 1000);
-      tick();
-    })();
-  </script>
+    }
+    const int = setInterval(tick, 1000);
+    tick();
+  })();
+</script>
 
   <!-- (Copy button script removed) -->
 
@@ -884,5 +880,6 @@
   </script>
 </body>
 </html>
+
 
 
